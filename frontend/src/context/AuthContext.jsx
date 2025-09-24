@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check for user in local storage on initial load
+  
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -18,13 +18,12 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
   try {
     const res = await axios.post(`${API_BASE}/auth/login`, { email, password });
-    const userData = res.data; // should contain _id, name, email, token
+    const userData = res.data; 
 
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', userData.token);
-    // console.log(userData.token);
-     // <-- just use userData.token
+    
   } catch (error) {
     console.error('Login error:', error.response?.data?.message || error.message);
     throw new Error(error.response?.data?.message || 'Login failed');
@@ -34,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   const signup = async (name, email, password) => {
     try {
       const res = await axios.post(`${API_BASE}/auth/signup`, { name, email, password });
-      const userData = res.data; // should contain _id, name, email, token
+      const userData = res.data; 
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
     } catch (error) {
