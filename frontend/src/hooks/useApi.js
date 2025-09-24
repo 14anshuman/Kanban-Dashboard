@@ -6,7 +6,7 @@ export const API_BASE = 'http://localhost:5001/api';
 // Create an axios instance
 const api = axios.create({
   baseURL: API_BASE,
-  // withCredentials: true, // uncomment if your backend uses cookies
+  
 });
 
 // Attach JWT token to every request
