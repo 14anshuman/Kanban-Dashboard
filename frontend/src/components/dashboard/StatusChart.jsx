@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
-import { STATUS_MAP, TASK_STATUS } from '../../constants'; // Make sure TASK_STATUS replaces TaskStatus enum
+import { STATUS_MAP, TASK_STATUS } from '../../constants';
 
 const StatusChart = ({ tasks }) => {
   const data = Object.values(TASK_STATUS).map(status => ({
