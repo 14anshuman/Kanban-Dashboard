@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 const TaskForm = ({ task, onSave, onCancel }) => {
   const [title, setTitle] = useState('');
-  const [priority, setPriority] = useState('Medium'); // default priority
+  const [priority, setPriority] = useState('Low'); // default priority
   const [deadline, setDeadline] = useState('');
   const [description,setDescription]=useState('');
   const [error, setError] = useState('');
